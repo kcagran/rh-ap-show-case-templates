@@ -44,31 +44,8 @@ spec:
             on launch", the selected credential(s) become the defaults that can
             be updated at run time.
           type: array
-          items:
-            type: object
-            enum:
-              - id: 1
-                name: Demo Credential
-                type: Machine
-              - id: 2
-                name: Ansible Galaxy
-                type: Ansible Galaxy/Automation Hub API Token
-              - id: 4
-                name: rothakurgithubPAT
-                type: Source Control
-              - id: 5
-                name: cml-instance
-                type: Amazon Web Services
-              - id: 6
-                name: Ansible Experience RHEL Credentials
-                type: Machine
-            enumNames:
-              - Demo Credential
-              - Ansible Galaxy
-              - rothakurgithubPAT
-              - cml-instance
-              - Ansible Experience RHEL Credentials
-          uniqueItems: true
+          ui:field: AAPResourcePicker
+          resource: credentials
     - title: Survey
       required:
         - iisName
@@ -108,7 +85,7 @@ spec:
         token: ${{ parameters.token }}
         values:
           templateID: ~
-          inventory: ${{ parameters.inventory | resourceIdFilter }}
+          inventory: ${{ parameters.inventory }}
           credentials: ${{ parameters.credentials }}
           extraVariables:
             iis_name: ${{ parameters.iisName }}

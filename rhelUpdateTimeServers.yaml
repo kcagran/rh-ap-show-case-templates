@@ -83,7 +83,7 @@ spec:
         token: ${{ parameters.token }}
         values:
           templateID: ~
-          inventory: ${{ parameters.inventory | resourceIdFilter }}
+          inventory: ${{ parameters.inventory }}
           extraVariables:
             ntp_servers: ${{ parameters.ntpServers }}
             timezone: ${{ parameters.timezone }}

@@ -97,8 +97,8 @@ spec:
         token: ${{ parameters.token }}
         values:
           templateID: ~
-          inventory: ${{ parameters.inventory | resourceIdFilter }}
-          executionEnvironment: ${{ parameters.executionEnvironment | resourceIdFilter }}
+          inventory: ${{ parameters.inventory  }}
+          executionEnvironment: ${{ parameters.executionEnvironment }}
           extraVariables:
             backup_type: ${{ parameters.backupType }}
             GH_REPO: ${{ parameters.ghRepo }}
